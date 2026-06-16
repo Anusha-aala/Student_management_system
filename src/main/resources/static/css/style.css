@@ -1,0 +1,156 @@
+/* General */
+body{
+    margin:0;
+    padding:30px;
+    background:#eef2f7;
+    font-family:Arial,sans-serif;
+}
+
+/* Header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.title{
+    font-size:42px;
+    font-weight:bold;
+    color:#15395b;
+}
+
+.add-btn{
+    background:#2d8fd8;
+    color:white;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.add-btn:hover{
+    background:#1877c7;
+}
+
+/* Table */
+
+.table-container{
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2f4661;
+
+    color:white;
+}
+
+th{
+    padding:24px;
+
+    text-align:left;
+
+    font-size:20px;
+}
+
+td{
+    padding:22px;
+
+    border-bottom:1px solid #eee;
+
+    font-size:20px;
+
+    color:#17365c;
+}
+
+
+
+/* Course badge */
+
+.course{
+    display:inline-block;
+
+    background:#dff5ea;
+
+    color:#00a85a;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+}
+
+/* Buttons */
+
+.edit-btn{
+    background:#f5a623;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    margin-right:10px;
+}
+
+.delete-btn{
+    background:#f44336;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+}
+
+td:last-child{
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+.edit-btn,
+.delete-btn{
+    display:inline-block;
+
+    min-width:70px;
+
+    text-align:center;
+}
