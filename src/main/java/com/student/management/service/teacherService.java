@@ -9,11 +9,11 @@ import java.util.List;
 @Service
 public class teacherService {
     @Autowired
-    private  teacherRepo teacherrepo;
+    private static teacherRepo teacherrepo;
     public teacherService(teacherRepo teacherrepo){
         this.teacherrepo=teacherrepo;
     }
-    public teacher addTeacher(teacher teacher) {
+    public static teacher addTeacher(teacher teacher) {
 
         System.out.println("Saving teacher...");
 
@@ -23,7 +23,11 @@ public class teacherService {
 
         return saved;
     }
-    public teacher updateTeacher(Long id,teacher teacher){
+
+
+
+
+    public static teacher updateTeacher(Long id, teacher teacher){
         teacher existingTeacher=teacherrepo.findById(id).orElse(null);
         if(existingTeacher==null){
             return null;
@@ -46,20 +50,27 @@ public class teacherService {
         if(teacher.getTeacherAddress()!=null){
             existingTeacher.setTeacherAddress(teacher.getTeacherAddress());
         }
-        if(teacher.getTeacherSpecilizations()!=null){
-            existingTeacher.setTeacherSpecilizations(teacher.getTeacherSpecilizations());
+        if(teacher.getTeacherSpecializations()!=null){
+            existingTeacher.setTeacherSpecilizations(teacher.getTeacherSpecializations());
         }
 
         return teacherrepo.save(existingTeacher);
     }
-    public void deleteTeacher(teacher teacher){
+
+
+
+    public static void deleteTeacher(teacher teacher){
         teacherrepo.deleteById(teacher.getTeacherId());
     }
-    public teacher getteacherId(Long id){
+    public teacher teacherId(Long id){
         return teacherrepo.findById(id).orElse(null);
     }
-    public List<teacher> getAllteachers(){
+    public static List<teacher> getAllteachers(){
 
         return teacherrepo.findAll();
+    }
+
+    public static teacher getTeacherId(Long id) {
+        return teacherrepo.findById(id).orElse(null);
     }
 }

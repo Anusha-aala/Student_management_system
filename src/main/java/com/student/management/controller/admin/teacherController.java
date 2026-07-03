@@ -1,7 +1,5 @@
-package com.student.management.controller;
-import com.student.management.model.student;
+package com.student.management.controller.admin;
 import com.student.management.model.teacher;
-import com.student.management.repository.teacherRepo;
 import com.student.management.service.teacherService;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,17 +30,22 @@ public class teacherController {
     }
     @DeleteMapping("/delete/{id}")
     public void deleteTeacher(@PathVariable Long id){
-        teacher teacher=teacherservice .getteacherId(id);
+        teacher teacher=teacherservice .getTeacherId(id);
         if(teacher!=null){
             teacherservice.deleteTeacher(teacher);
         }
     }
     @GetMapping("/{id}")
     public teacher getTeacherById(@PathVariable Long id){
-        return teacherservice.getteacherId(id);
+        return teacherservice.getTeacherId(id);
     }
     @GetMapping("/allteachers")
     public List<teacher> getAllteachers(){
         return teacherservice.getAllteachers();
     }
-}
+
+
+
+
+    }
+

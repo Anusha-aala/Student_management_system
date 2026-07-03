@@ -1,7 +1,6 @@
-package com.student.management.controller;
+package com.student.management.controller.admin;
 import com.student.management.model.student;
 import com.student.management.service.studentService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 @RestController

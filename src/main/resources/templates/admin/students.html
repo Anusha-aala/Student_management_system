@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <link rel="stylesheet" th:href="@{/css/sidebar.css}">
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<!-- Main Content -->
+<div class="main-content">
+
+    <div class="header">
+
+        <h1 class="title">📚 Student Management</h1>
+
+        <a th:href="@{/admin/students/add}" class="add-btn">
+            + Add Student
+        </a>
+
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Courses Completed</th>
+                <th>Current Year</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr th:each="student : ${students}">
+
+                <td th:text="${student.studentId}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.email}"></td>
+
+                <td>
+                    <span class="course"
+                          th:text="${student.course}">
+                    </span>
+                </td>
+
+                <td th:text="${student.phoneNumber}"></td>
+                <td th:text="${student.address}"></td>
+                <td th:text="${student.gender}"></td>
+                <td th:text="${student.coursesCompleted}"></td>
+                <td th:text="${student.currentYear}"></td>
+
+                <td>
+
+                    <a class="edit-btn"
+                       th:href="@{'/admin/students/edit/'+${student.studentId}}">
+                        Edit
+                    </a>
+
+                    <br><br>
+
+                    <a class="delete-btn"
+                       th:href="@{'/admin/students/delete/'+${student.studentId}}">
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -72,7 +72,7 @@ public class teacher {
     public String getTeacherHighestQualifications(){
         return teacherHighestQualifications;
     }
-    public String getTeacherSpecilizations(){
+    public String getTeacherSpecializations(){
         return teacherSpecializations;
     }
 

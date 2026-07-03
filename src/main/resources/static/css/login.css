@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#f5f6fa;
+}
+
+/* Main Container */
+
+.container{
+    width:100%;
+    height:100vh;
+    display:flex;
+}
+
+/* ===========================
+   LEFT PANEL
+=========================== */
+.left-panel{
+    width:40%;
+    background:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    width:430px;
+}
+
+.brand{
+    position:absolute;
+    top:25px;
+    left:35px;
+
+    font-size:34px;
+    font-weight:700;
+
+    color:#6c5ce7;
+
+    z-index:1000;
+}
+.login-box h2{
+    font-size:48px;
+    font-weight:700;
+    color:#222;
+
+    margin-bottom:10px;
+}
+
+.login-box p{
+    font-size:20px;
+    color:#666;
+
+    margin-bottom:35px;
+}
+.login-box input{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-bottom:20px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    outline:none;
+
+}
+
+.login-box input:focus{
+
+    border:2px solid #6c5ce7;
+
+}
+
+/* Login Button */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    background:#6c5ce7;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#5744d8;
+
+}
+
+/* Register */
+
+.register-link{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.register-link a{
+
+    color:#6c5ce7;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+.register-link a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* Messages */
+
+.error{
+
+    margin-top:15px;
+
+    color:red;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+.success{
+
+    margin-top:15px;
+
+    color:green;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+
+.right-panel{
+
+    width:60%;
+
+    background:#b497ff;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.right-panel img{
+
+    width:75%;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
