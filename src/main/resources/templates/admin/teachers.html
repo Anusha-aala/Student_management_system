@@ -8,91 +8,76 @@
 </head>
 <body>
 
-
 <div th:replace="~{fragments/sidebar :: sidebar}"></div>
 
-<div style="margin-left:250px;padding:25px;">
+<div class="main-content">
 
-    <!-- Student Management Content -->
+    <div class="header">
 
-</div>
+        <h1 class="title">
+            👨‍🏫 Teacher Management
+        </h1>
 
+        <a th:href="@{/admin/teachers/add}" class="add-btn">
+            + Add Teacher
+        </a>
 
-<div class="header">
+    </div>
 
-    <h1 class="title">
-        👨‍🏫 Teacher Management
-    </h1>
+    <div class="table-container">
 
-    <a
-            th:href="@{/admin/teachers/add}"
-            class="add-btn">
-        + Add Teacher
-    </a>
+        <table>
 
-</div>
+            <thead>
 
-<div class="table-container">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Qualification</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Specialization</th>
+                <th>Actions</th>
+            </tr>
 
-    <table>
+            </thead>
 
-        <thead>
+            <tbody>
 
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Qualification</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Specialization</th>
-            <th>Actions</th>
-        </tr>
+            <tr th:each="teacher : ${teachers}">
 
-        </thead>
+                <td th:text="${teacher.teacherId}"></td>
+                <td th:text="${teacher.teacherName}"></td>
+                <td th:text="${teacher.teacherEmail}"></td>
+                <td th:text="${teacher.teacherGender}"></td>
+                <td th:text="${teacher.teacherHighestQualifications}"></td>
+                <td th:text="${teacher.teacherPhoneNumber}"></td>
+                <td th:text="${teacher.teacherAddress}"></td>
+                <td th:text="${teacher.teacherSpecializations}"></td>
 
-        <tbody>
+                <td class="action-buttons">
 
-        <tr th:each="teacher : ${teachers}">
+                    <a class="edit-btn"
+                       th:href="@{'/admin/teachers/edit/' + ${teacher.teacherId}}">
+                        Edit
+                    </a>
 
-            <td th:text="${teacher.teacherId}"></td>
+                    <a class="delete-btn"
+                       th:href="@{'/admin/teachers/delete/' + ${teacher.teacherId}}">
+                        Delete
+                    </a>
 
-            <td th:text="${teacher.teacherName}"></td>
+                </td>
 
-            <td th:text="${teacher.teacherEmail}"></td>
+            </tr>
 
-            <td th:text="${teacher.teacherGender}"></td>
+            </tbody>
 
-            <td th:text="${teacher.teacherHighestQualifications}"></td>
+        </table>
 
-            <td th:text="${teacher.teacherPhoneNumber}"></td>
-
-            <td th:text="${teacher.teacherAddress}"></td>
-
-            <td th:text="${teacher.teacherSpecializations}"></td>
-
-            <td>
-
-                <a
-                        class="edit-btn"
-                        th:href="@{'/admin/teachers/edit/'+${teacher.teacherId}}">
-                    Edit
-                </a>
-
-                <a
-                        class="delete-btn"
-                        th:href="@{'/admin/teachers/delete/'+${teacher.teacherId}}">
-                    Delete
-                </a>
-
-            </td>
-
-        </tr>
-
-        </tbody>
-
-    </table>
+    </div>
 
 </div>
 

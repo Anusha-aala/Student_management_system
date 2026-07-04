@@ -23,66 +23,60 @@
 
 
 
-<div class="header">
+<div th:replace="~{fragments/addside :: addside}"></div>
 
-    <h1 class="title">
-        📘 Course Management
-    </h1>
+<div class="main-content">
 
+    <div class="header">
 
+        <h1 class="title">
+            📘 Course Management
+        </h1>
 
-</div>
+    </div>
 
-<div class="table-container">
+    <div class="table-container">
 
-    <table>
+        <table>
 
-        <thead>
+            <thead>
 
-        <tr>
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Semester</th>
+                <th>Department</th>
+                <th>Duration</th>
 
-            <th>ID</th>
-            <th>Course Name</th>
-            <th>Credits</th>
-            <th>Semester</th>
-            <th>Department</th>
-            <th>Duration</th>
-            <th>Actions</th>
+            </tr>
 
-        </tr>
+            </thead>
 
-        </thead>
+            <tbody>
 
-        <tbody>
+            <tr th:each="course : ${courses}">
 
-        <tr th:each="course : ${courses}">
+                <td th:text="${course.courseId}"></td>
+                <td th:text="${course.courseName}"></td>
+                <td th:text="${course.credits}"></td>
+                <td th:text="${course.semester}"></td>
+                <td th:text="${course.departments}"></td>
+                <td th:text="${course.duration}"></td>
 
-            <td th:text="${course.courseId}"></td>
+                <td>
 
-            <td th:text="${course.courseName}"></td>
+                </td>
 
-            <td th:text="${course.credits}"></td>
+            </tr>
 
-            <td th:text="${course.semester}"></td>
+            </tbody>
 
-            <td th:text="${course.departments}"></td>
+        </table>
 
-            <td th:text="${course.duration}"></td>
-
-            <td>
-
-
-
-            </td>
-
-        </tr>
-
-        </tbody>
-
-    </table>
+    </div>
 
 </div>
-
 </body>
 
 </html>

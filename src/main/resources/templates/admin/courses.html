@@ -15,87 +15,68 @@
 
 <div th:replace="~{fragments/sidebar :: sidebar}"></div>
 
-<div style="margin-left:250px;padding:25px;">
+<div class="main-content">
 
-    <!-- Student Management Content -->
+    <div class="header">
 
-</div>
+        <h1 class="title">
+            📘 Course Management
+        </h1>
 
+        <a th:href="@{/admin/courses/add}" class="add-btn">
+            + Add Course
+        </a>
 
+    </div>
 
-<div class="header">
+    <div class="table-container">
 
-    <h1 class="title">
-        📘 Course Management
-    </h1>
+        <table>
 
-    <a
-            th:href="@{/admin/courses/add}"
-            class="add-btn">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Semester</th>
+                <th>Department</th>
+                <th>Duration</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
 
-        + Add Course
+            <tbody>
 
-    </a>
+            <tr th:each="course : ${courses}">
 
-</div>
+                <td th:text="${course.courseId}"></td>
+                <td th:text="${course.courseName}"></td>
+                <td th:text="${course.credits}"></td>
+                <td th:text="${course.semester}"></td>
+                <td th:text="${course.departments}"></td>
+                <td th:text="${course.duration}"></td>
 
-<div class="table-container">
+                <td class="action-buttons">
 
-    <table>
+                    <a class="edit-btn"
+                       th:href="@{'/admin/courses/edit/' + ${course.courseId}}">
+                        Edit
+                    </a>
 
-        <thead>
+                    <a class="delete-btn"
+                       th:href="@{'/admin/courses/delete/' + ${course.courseId}}">
+                        Delete
+                    </a>
 
-        <tr>
+                </td>
 
-            <th>ID</th>
-            <th>Course Name</th>
-            <th>Credits</th>
-            <th>Semester</th>
-            <th>Department</th>
-            <th>Duration</th>
-            <th>Actions</th>
+            </tr>
 
-        </tr>
+            </tbody>
 
-        </thead>
+        </table>
 
-        <tbody>
-
-        <tr th:each="course : ${courses}">
-
-            <td th:text="${course.courseId}"></td>
-
-            <td th:text="${course.courseName}"></td>
-
-            <td th:text="${course.credits}"></td>
-
-            <td th:text="${course.semester}"></td>
-
-            <td th:text="${course.departments}"></td>
-
-            <td th:text="${course.duration}"></td>
-
-            <td>
-
-                <a
-                        class="edit-btn"
-                        th:href="@{'/admin/courses/edit/' + ${course.courseId}}">
-                    Edit
-                </a>
-
-                <a
-                        class="delete-btn"
-                        th:href="@{'/admin/courses/delete/' + ${course.courseId}}">
-                    Delete
-                </a>
-
-            </td>
-
-        </tr>
-
-        </tbody>
-
-    </table>
+    </div>
 
 </div>
 

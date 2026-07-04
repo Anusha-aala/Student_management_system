@@ -65,7 +65,7 @@
                 <td th:text="${student.coursesCompleted}"></td>
                 <td th:text="${student.currentYear}"></td>
 
-                <td>
+                <td  class="action-buttons">
 
                     <a class="edit-btn"
                        th:href="@{'/admin/students/edit/'+${student.studentId}}">
