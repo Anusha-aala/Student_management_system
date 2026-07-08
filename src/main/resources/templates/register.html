@@ -5,94 +5,91 @@
 
     <title>Register</title>
 
-    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/register.css}">
 
 </head>
 
 <body>
 
-<div class="login-container">
+<div class="container">
 
-    <div class="login-box">
+    <!-- Brand -->
+    <div class="brand">
+        Student Information System
+    </div>
 
-        <h1>Create Student Account</h1>
+    <!-- Left Side -->
+    <div class="left-panel">
 
-        <p>Register to Continue</p>
+        <div class="register-box">
 
-        <form th:action="@{/register}" method="post">
+            <h2>Create Account</h2>
 
-            <div class="input-box">
+            <p>Register to Continue</p>
+
+            <form th:action="@{/register}" method="post">
+
                 <input type="text"
                        name="fullname"
                        placeholder="Full Name"
                        required>
-            </div>
 
-            <div class="input-box">
                 <input type="text"
                        name="collegename"
                        placeholder="College Name"
                        required>
-            </div>
 
-            <div class="input-box">
                 <input type="email"
                        name="userEmail"
-                       placeholder="Email"
+                       placeholder="Email Address"
                        required>
-            </div>
 
-            <div class="input-box">
                 <input type="text"
                        name="username"
                        placeholder="Username"
                        required>
-            </div>
 
-            <div class="input-box">
                 <input type="password"
                        name="password"
                        placeholder="Password"
                        required>
-            </div>
 
-            <div class="input-box">
                 <input type="password"
                        name="confirmPassword"
                        placeholder="Confirm Password"
                        required>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <p class="error" th:text="${error}"></p>
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a th:href="@{/login}">
+                    Login
+                </a>
+
             </div>
 
-            <button type="submit">
+        </div>
 
-                Register
+    </div>
 
-            </button>
+    <!-- Right Side -->
 
-        </form>
+    <div class="right-panel">
 
-        <br>
-
-        <p style="color:red;" th:text="${error}"></p>
-
-        <br>
-
-        <p>
-
-            Already have an account?
-
-            <a th:href="@{/login}">
-
-                Login
-
-            </a>
-
-        </p>
+        <img th:src="@{/images/login.jpg}" alt="Register">
 
     </div>
 
 </div>
 
 </body>
-
 </html>
